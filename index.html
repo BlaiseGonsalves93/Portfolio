@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blaise Gonsalves – Generative AI Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <canvas id="fluid" aria-hidden="true"></canvas>
+
+  <main id="home" class="view">
+    <div class="bento">
+      <div class="tile me" style="grid-area:me"><img id="photo" src="assets/photo.jpeg" alt="Blaise Gonsalves"
+          onerror="this.onerror=null;this.src='assets/photo.svg'">
+        <div>
+          <h1 id="nm"></h1>
+          <p id="tt"></p>
+        </div>
+      </div>
+      <form class="find" style="grid-area:find" id="f1"><input id="q1" placeholder="Ask me anything…"
+          aria-label="Ask me anything"><button aria-label="Send">→</button></form>
+      <button class="tile" style="grid-area:proj" data-q="What are you working on?"><svg viewBox="0 0 24 24">
+          <path d="M3 6h6l2 2h10v11H3z" />
+        </svg><b>Projects</b></button>
+      <div class="tile quote" style="grid-area:quote" id="quote"></div>
+      <button class="tile wide" style="grid-area:edu" data-q="What did you study?"><svg viewBox="0 0 24 24">
+          <path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c3 2 9 2 12 0v-5" />
+        </svg><b>Education</b><i class="pill">View</i></button>
+      <button class="tile" style="grid-area:exp" data-q="Where have you worked?"><svg viewBox="0 0 24 24">
+          <path d="M3 7h18v13H3zM9 7V4h6v3" />
+        </svg><b>Experience</b></button>
+      <a class="tile" style="grid-area:git" id="gh" target="_blank" rel="noopener"><svg viewBox="0 0 24 24">
+          <path
+            d="M9 19c-4 1-4-2-6-2m12 4v-3a3 3 0 0 0-1-2c3 0 6-2 6-6a5 5 0 0 0-1-3 5 5 0 0 0 0-3s-1 0-3 1a10 10 0 0 0-6 0C6 4 5 4 5 4a5 5 0 0 0 0 3 5 5 0 0 0-1 3c0 4 3 6 6 6a3 3 0 0 0-1 2v3" />
+        </svg><b>GitHub</b></a>
+      <button class="tile" style="grid-area:res" data-q="Can I see your resume?"><svg viewBox="0 0 24 24">
+          <path d="M6 3h9l4 4v14H6zM14 3v5h5" />
+        </svg><b>Resume</b></button>
+      <button class="tile" style="grid-area:stack" data-q="What is your tech stack?"><svg viewBox="0 0 24 24">
+          <path d="M12 3 2 8l10 5 10-5zM2 13l10 5 10-5" />
+        </svg><b>Tech Stack</b></button>
+      <button class="tile wide" style="grid-area:soc" data-q="Where can I follow you?"><svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8" />
+        </svg><b>Social</b><i class="pill">Follow</i></button>
+      <button class="tile" style="grid-area:loc" data-q="Where are you based?"><svg viewBox="0 0 24 24">
+          <path d="M12 21s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12zM12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+        </svg><b>Location</b></button>
+      <button class="tile wide" style="grid-area:talk" data-q="How can I reach you?"><svg viewBox="0 0 24 24">
+          <path d="M3 5h18v14H3zM3 6l9 7 9-7" />
+        </svg><b>Talk with me</b><i class="pill">Say hi</i></button>
+      <button class="tile" style="grid-area:what" data-q="Who are you?"><span class="qm">?</span><b>What do you
+          do?</b></button>
+    </div>
+  </main>
+
+  <section id="chat" class="view" hidden>
+    <button id="back" aria-label="Back to home"><svg viewBox="0 0 24 24">
+        <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
+      </svg></button>
+    <img class="avatar" id="av" src="assets/photo.jpeg" alt="" onerror="this.onerror=null;this.src='assets/photo.svg'">
+    <div id="thread" aria-live="polite"></div>
+    <div class="dock">
+      <div id="more" hidden></div>
+      <div class="chips"><button data-q="Who are you?">About</button><button
+          data-q="Where have you worked?">Experience</button><button
+          data-q="What did you study?">Education</button><button
+          data-q="What is your tech stack?">Skills</button><button id="mb" aria-label="More questions">⊖</button></div>
+      <form class="find" id="f2"><input id="q2" placeholder="Ask me anything…" aria-label="Ask me anything"><button
+          aria-label="Send">↑</button></form>
+    </div>
+  </section>
+
+  <div id="sheet" hidden><span class="pill dark">Email me!</span>
+    <h3>Want to chat more?</h3>
+    <p>Connect with me at blaisegonsalves2@gmail.com or Hit me up on <a
+        href="https://www.linkedin.com/in/blaise-gonsalves/" target="_blank">
+        LinkedIn
+      </a></p><button id="sx">Close</button>
+  </div>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
